@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
 function NavBar() {
-    return <></>
+    return (
+        ''
+    )
 }
 
 export default NavBar;
