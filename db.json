@@ -1,0 +1,10 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "user": "user",
+            "text": "text",
+            "time": "time"
+        }
+    ]
+}

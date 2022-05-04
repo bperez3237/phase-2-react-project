@@ -1,13 +1,13 @@
 import React from "react";
 import Card from './Card'
 
-function Feed() {
+function Feed({feed}) {
 
 
     return (
         <div>
             <h1>Feed!</h1>
-            <Card />
+            {feed}
         </div>
     )
 }

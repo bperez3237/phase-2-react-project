@@ -4,28 +4,35 @@ import NavBar from "./NavBar";
 import Home from "./Home";
 import Login from "./Login"
 import Account from "./Account"
-import Feed from "./Feed"
 
 function App() {
   const [loggedIn, setIsLoggedIn] = useState(false)
-  const [username,setUsername] = useState('')
+  const [username, setUsername] = useState('')
 
-  return (
-    <div className="App">
-      <NavBar loggedIn={loggedIn}/>
-      <Switch>
-        <Route path='/login'>
-          <Login setIsLoggedIn={setIsLoggedIn} username={username} setUsername={setUsername} />
-        </Route>
+
+  if (loggedIn) {
+    return (
+      <div>
+        <NavBar loggedIn={loggedIn}/>
+        <Switch>
         <Route path='/home'>
-          <Home username={username} />
+            <Home username={username} />
         </Route>
-        <Route path='/account'>
-          <Account username={username} />
+          <Route path='/account'>
+            <Account username={username} />
+          </Route>
+        </Switch>
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <Route exact path='/'>
+            <Login username={username} setUsername={setUsername} />
         </Route>
-      </Switch>
-    </div>
-  );
+      </div>
+    )
+  }
 }
 
 export default App;
