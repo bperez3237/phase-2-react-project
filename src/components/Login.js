@@ -1,19 +1,17 @@
-import React, {useState} from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import React from "react";
+import { useHistory } from "react-router-dom";
 
 function Login({ setIsLoggedIn, username, setUsername }) {
   const history = useHistory()
 
   function handleChange(e) {
+    console.log(e.target.value)
     setUsername(e.target.value)
-
   }
+
   function handleSubmit(e) {
     e.preventDefault()
-    e.target.value = ''
-    console.log(e.target.input)
     setIsLoggedIn(true)
-
     history.push('/home')
   }
 

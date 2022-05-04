@@ -28,7 +28,11 @@ function App() {
     return (
       <div>
         <Route exact path='/'>
-            <Login username={username} setUsername={setUsername} />
+            <Login 
+            setIsLoggedIn={setIsLoggedIn} 
+            username={username} 
+            setUsername={setUsername} 
+            />
         </Route>
       </div>
     )
