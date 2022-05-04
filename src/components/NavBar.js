@@ -7,7 +7,6 @@ function NavBar() {
             <NavLink to='./login'>Login</NavLink>
             <NavLink to='./home'>Home</NavLink>
             <NavLink to='./account'>Account</NavLink>
-            <NavLink to='./feed'>Feed</NavLink>
         </div>
     )
 }

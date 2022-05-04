@@ -20,9 +20,6 @@ function App() {
         <Route path='/account'>
           <Account />
         </Route>
-        <Route path='/feed'>
-          <Feed />
-        </Route>
       </Switch>
     </div>
   );
