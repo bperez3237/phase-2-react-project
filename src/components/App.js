@@ -7,18 +7,21 @@ import Account from "./Account"
 import Feed from "./Feed"
 
 function App() {
+  const [loggedIn, setIsLoggedIn] = useState(false)
+  const [username,setUsername] = useState('')
+
   return (
     <div className="App">
-      <NavBar />
+      <NavBar loggedIn={loggedIn}/>
       <Switch>
         <Route path='/login'>
-          <Login />
+          <Login setIsLoggedIn={setIsLoggedIn} username={username} setUsername={setUsername} />
         </Route>
         <Route path='/home'>
-          <Home />
+          <Home username={username} />
         </Route>
         <Route path='/account'>
-          <Account />
+          <Account username={username} />
         </Route>
       </Switch>
     </div>

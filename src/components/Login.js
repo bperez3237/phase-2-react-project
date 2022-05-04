@@ -1,11 +1,27 @@
-import React from "react";
-import { Redirect } from "react-router-dom";
+import React, {useState} from "react";
+import { Redirect, useHistory } from "react-router-dom";
 
-function Login() {
+function Login({ setIsLoggedIn, username, setUsername }) {
+  const history = useHistory()
+
+
+  function handleChange(e) {
+    setUsername(e.target.value)
+
+  }
+  function handleSubmit(e) {
+    e.preventDefault()
+    setIsLoggedIn(true)
+    history.push('/home')
+  }
 
   return (
     <div>
       <h1>Login</h1>
+      <form onSubmit={handleSubmit} >
+        <input type='text' name='user' value={username} onChange={handleChange}/>
+        <button type='submit'>Login</button>
+      </form>
     </div>
   );
 }
