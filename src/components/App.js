@@ -4,10 +4,13 @@ import NavBar from "./NavBar";
 import Home from "./Home";
 import Login from "./Login"
 import Account from "./Account"
+import UserList from './UserList'
+
 
 function App() {
   const [loggedIn, setIsLoggedIn] = useState(false)
   const [username, setUsername] = useState('')
+  const [feed, setFeed] = useState([])
 
 
   if (loggedIn) {
@@ -16,11 +19,14 @@ function App() {
         <NavBar loggedIn={loggedIn}/>
         <Switch>
         <Route path='/home'>
-            <Home username={username} />
+            <Home username={username} feed={feed} setFeed={setFeed} />
         </Route>
-          <Route path='/account'>
-            <Account username={username} />
-          </Route>
+        <Route path='/account'>
+          <Account username={username} feed={feed} />
+        </Route>
+        <Route path='/userlist' >
+          <UserList feed={feed} />
+        </Route>
         </Switch>
       </div>
     )

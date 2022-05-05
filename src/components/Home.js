@@ -1,9 +1,14 @@
 import React, {useState} from "react";
 import Post from "./Post";
 
-function Home({username}) {
-  const [feed, setFeed] = useState([])
+function Home({username, feed, setFeed }) {
+  const [post,setPost] = useState('')
 
+
+  function handleChange(e) {
+    setPost(e.target.value)
+
+  }
   function handleSubmit(e) {
     e.preventDefault()
 
@@ -11,8 +16,8 @@ function Home({username}) {
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
     const newPost = <Post 
-    key={username+time} 
-    text={e.target.children[0].value}
+    key={username+' '+time} 
+    text={post}
     user={username}
     time={time} />
 
@@ -24,7 +29,7 @@ function Home({username}) {
       <h1>Home!</h1>
       <h2>Hi {username}!</h2>
       <form onSubmit={handleSubmit}>
-        <input type='text' />
+        <input type='text' value={post} onChange={handleChange} />
         <button>Post</button>
       </form>
       <h1>Post List:</h1>
