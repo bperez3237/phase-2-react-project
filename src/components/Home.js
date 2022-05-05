@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Post from "./Post";
 
 function Home({username, feed, setFeed }) {
+  
   var today = new Date();
   var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 

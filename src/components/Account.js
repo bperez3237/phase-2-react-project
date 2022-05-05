@@ -1,6 +1,6 @@
 import React from "react";
 
-function Account({username, feed}) {
+function Account({username, feed }) {
     const userFeed = feed.filter((post)=>post.user===username)
    
     let counter = 0

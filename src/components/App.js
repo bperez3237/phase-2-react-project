@@ -23,7 +23,7 @@ function App() {
   function logout() {
     setIsLoggedIn(false)
     setUsername('')
-    history.push('/')
+    history.push('/login')
   }
 
 
@@ -36,7 +36,7 @@ function App() {
             <Home username={username} feed={feed} setFeed={setFeed} />
         </Route>
         <Route path='/account'>
-          <Account username={username} feed={feed} />
+          <Account username={username} feed={feed}/>
         </Route>
         <Route path='/userlist' >
           <UserList feed={feed} />
@@ -45,9 +45,10 @@ function App() {
       </div>
     )
   } else {
+    history.push('/login')
     return (
       <div>
-        <Route exact path='/'>
+        <Route path='/login'>
             <Login 
             setIsLoggedIn={setIsLoggedIn} 
             username={username} 
