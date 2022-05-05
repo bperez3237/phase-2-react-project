@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import Login from "./Login"
@@ -12,17 +12,25 @@ function App() {
   const [username, setUsername] = useState('')
   const [feed, setFeed] = useState()
 
+  const history = useHistory()
+
   useEffect(()=> {
     fetch('http://localhost:3000/posts')
       .then((r)=>r.json())
       .then((data)=>setFeed(data))
   },[])
 
+  function logout() {
+    setIsLoggedIn(false)
+    setUsername('')
+    history.push('/')
+  }
+
 
   if (loggedIn) {
     return (
       <div>
-        <NavBar loggedIn={loggedIn}/>
+        <NavBar logout={logout} />
         <Switch>
         <Route path='/home'>
             <Home username={username} feed={feed} setFeed={setFeed} />

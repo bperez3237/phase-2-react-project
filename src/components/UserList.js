@@ -13,7 +13,7 @@ function UserList({feed}) {
     const uniqueUsers = [...new Set(users)]
     const userListElements = uniqueUsers.map((user) => {
         if (user.includes(search)) {
-            return <li>{user}</li>
+            return <li key={user} >{user}</li>
         }
     })
 
