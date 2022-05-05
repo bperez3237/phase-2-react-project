@@ -6,11 +6,14 @@ function Account({username, feed}) {
    
     let counter = 0
     userFeed.forEach((post)=>{
-        console.log(post.text.length)
         counter = counter+ post.text.length
     })
 
-    
+    console.log(userFeed[userFeed.length-1])
+
+
+
+
 
 
     return (
@@ -19,6 +22,7 @@ function Account({username, feed}) {
             <h2>{username}</h2>
             <h2>Number of Posts: {userFeed.length}</h2>
             <h2>Characters Typed: {counter}</h2>
+            <h2>Last Post Time: {userFeed[userFeed.length-1].time}</h2>
         </div>
     )
 }

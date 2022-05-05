@@ -7,8 +7,6 @@ function Home({username, feed, setFeed }) {
 
   const [post,setPost] = useState('')
 
-
-
   function handleChange(e) {
     setPost(e.target.value)
   }
@@ -34,14 +32,16 @@ function Home({username, feed, setFeed }) {
   }
 
 
-
+  let counter = 0
   const postElements = feed.map((post)=> {
+    counter = counter + 1
     return <Post
-      key={post.user+' '+post.time} 
+      key={counter} 
       text={post.text}
       user={post.user}
       time={post.time}
       />
+
   })
 
   return (
