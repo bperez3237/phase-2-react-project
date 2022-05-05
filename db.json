@@ -1,10 +1,22 @@
 {
-    "posts": [
-        {
-            "id": 1,
-            "user": "user",
-            "text": "text",
-            "time": "time"
-        }
-    ]
+  "posts": [
+    {
+      "id": 1,
+      "user": "user",
+      "text": "text",
+      "time": "time"
+    },
+    {
+      "id": 2,
+      "user": "user",
+      "text": "text",
+      "time": "time 2"
+    },
+    {
+      "text": "post 2",
+      "user": "Matt",
+      "time": "20:54:18",
+      "id": 3
+    }
+  ]
 }

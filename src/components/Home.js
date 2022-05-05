@@ -2,27 +2,47 @@ import React, {useState} from "react";
 import Post from "./Post";
 
 function Home({username, feed, setFeed }) {
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
   const [post,setPost] = useState('')
+
 
 
   function handleChange(e) {
     setPost(e.target.value)
-
   }
+
   function handleSubmit(e) {
     e.preventDefault()
 
-    var today = new Date();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const postObj = {
+      'text': post,
+      'user': username,
+      'time': time
+    }
 
-    const newPost = <Post 
-    key={username+' '+time} 
-    text={post}
-    user={username}
-    time={time} />
-
-    setFeed([...feed,newPost])
+    fetch(`http://localhost:3000/posts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postObj)
+    })
+      .then((r)=>r.json())
+      .then((newPost)=>setFeed([...feed,newPost]))
   }
+
+
+
+  const postElements = feed.map((post)=> {
+    return <Post
+      key={post.user+' '+post.time} 
+      text={post.text}
+      user={post.user}
+      time={post.time}
+      />
+  })
 
   return (
     <div>
@@ -34,7 +54,7 @@ function Home({username, feed, setFeed }) {
       </form>
       <h1>Post List:</h1>
       <div>
-        {feed}
+        {postElements!==undefined ? postElements : null}
       </div>
     </div>
   );

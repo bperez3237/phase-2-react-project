@@ -1,6 +1,10 @@
 import React from "react";
 
-function UserList() {
+function UserList({feed}) {
+
+
+
+
     return (
         <h1>User List:</h1>
     )

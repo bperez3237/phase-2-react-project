@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
@@ -10,7 +10,13 @@ import UserList from './UserList'
 function App() {
   const [loggedIn, setIsLoggedIn] = useState(false)
   const [username, setUsername] = useState('')
-  const [feed, setFeed] = useState([])
+  const [feed, setFeed] = useState()
+
+  useEffect(()=> {
+    fetch('http://localhost:3000/posts')
+      .then((r)=>r.json())
+      .then((data)=>setFeed(data))
+  },[])
 
 
   if (loggedIn) {

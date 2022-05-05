@@ -5,7 +5,6 @@ function Login({ setIsLoggedIn, username, setUsername }) {
   const history = useHistory()
 
   function handleChange(e) {
-    console.log(e.target.value)
     setUsername(e.target.value)
   }
 
