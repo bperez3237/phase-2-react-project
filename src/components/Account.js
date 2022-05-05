@@ -1,20 +1,12 @@
 import React from "react";
 
 function Account({username, feed}) {
-
     const userFeed = feed.filter((post)=>post.user===username)
    
     let counter = 0
     userFeed.forEach((post)=>{
-        counter = counter+ post.text.length
+        counter = counter + post.text.length
     })
-
-    console.log(userFeed[userFeed.length-1])
-
-
-
-
-
 
     return (
         <div>

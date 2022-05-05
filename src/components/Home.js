@@ -14,11 +14,7 @@ function Home({username, feed, setFeed }) {
   function handleSubmit(e) {
     e.preventDefault()
 
-    const postObj = {
-      'text': post,
-      'user': username,
-      'time': time
-    }
+    const postObj = {'text': post,'user': username,'time': time}
 
     fetch(`http://localhost:3000/posts`, {
       method: "POST",
@@ -31,17 +27,10 @@ function Home({username, feed, setFeed }) {
       .then((newPost)=>setFeed([...feed,newPost]))
   }
 
-
   let counter = 0
   const postElements = feed.map((post)=> {
     counter = counter + 1
-    return <Post
-      key={counter} 
-      text={post.text}
-      user={post.user}
-      time={post.time}
-      />
-
+    return <Post key={counter} text={post.text} user={post.user} time={post.time}/>
   })
 
   return (
