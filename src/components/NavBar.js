@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import React from "react";
+import { NavLink} from "react-router-dom";
 
-function NavBar({loggedIn}) {
+function NavBar() {
     return (
         <div>
-            <NavLink to='./login'>{loggedIn ? 'Logout' : 'Login'}</NavLink>
             <NavLink to='./home'>Home</NavLink>
             <NavLink to='./account'>Account</NavLink>
+            <NavLink to='/userlist'>User List</NavLink>
         </div>
     )
 }
