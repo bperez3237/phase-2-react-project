@@ -18,6 +18,12 @@ function UserList({feed}) {
         }
     })
 
+    // const matchingPosts = feed.map((post)=> {
+    //     if (post.text.includes(search)) {
+    //         return <li key={post.id}>{post.text}</li>
+    //     }
+    // })
+
     return (
         <div className="container">
             <h1>User List:</h1>
