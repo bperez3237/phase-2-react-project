@@ -1,11 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-// import Button from "react-bootstrap/Button"
-// import "boostrap/dist/css/boostrap.min.css"
-// import bootstrap from 'bootstrap'
 
 function Login({ setIsLoggedIn, username, setUsername }) {
-  // const boostrap = require('boostrap')
   const history = useHistory()
 
   function handleChange(e) {

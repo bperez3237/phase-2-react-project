@@ -43,7 +43,7 @@ function Home({username, feed, setFeed }) {
         <button>Post</button>
       </form>
       <h1>Post List:</h1>
-      <div>
+      <div className='container'>
         {postElements!==undefined ? postElements : null}
       </div>
     </div>
