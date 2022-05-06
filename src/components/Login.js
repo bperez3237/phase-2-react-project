@@ -15,11 +15,17 @@ function Login({ setIsLoggedIn, username, setUsername }) {
   }
 
   return (
-    <div>
+    <div className="d-flex justify-content-center flex-wrap">
       <h1>Login</h1>
+      <div className="break"></div>
       <form onSubmit={handleSubmit} >
-        <input type='text' name='user' value={username} onChange={handleChange}/>
-        <button type='submit'>Login</button>
+        <input 
+        placeholder="username"
+        type='text' 
+        name='user' 
+        value={username} 
+        onChange={handleChange}/>
+        <button type='submit' className="btn btn-primary">Login</button>
       </form>
     </div>
   );
