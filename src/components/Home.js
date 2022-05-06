@@ -25,6 +25,8 @@ function Home({username, feed, setFeed }) {
     })
       .then((r)=>r.json())
       .then((newPost)=>setFeed([...feed,newPost]))
+
+    setPost('')
   }
 
   let counter = 0
@@ -40,21 +42,22 @@ function Home({username, feed, setFeed }) {
   return (
     <div>
       <div>
-        <h1>Home!</h1>
-        <h2>Hi {username}!</h2>
+        <h1>Welcome to Postr</h1>
+        <h3>Hi {username}!</h3>
       </div>
       <div className="input-group">
-        <form onSubmit={handleSubmit} className='form-group' >
+        <form onSubmit={handleSubmit} >
           <input 
           className="form-control"
+          className=''
           type='text' 
           value={post} 
           onChange={handleChange} 
           />
           <button className="btn btn-primary" >Post</button>
         </form>
-        <h1>Post List:</h1>
         <div className='container'>
+          <h1>Post List:</h1>
           {postElements!==undefined ? postElements : null}
         </div>
       </div>
