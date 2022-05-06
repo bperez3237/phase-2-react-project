@@ -19,9 +19,9 @@ function UserList({feed}) {
     })
 
     return (
-        <div>
+        <div className="container">
             <h1>User List:</h1>
-            <h2>Filter List:</h2>
+            <h4>Filter List:</h4>
             <input type='text' value={search} onChange={handleChange} />
             <ul>
                 {userListElements}

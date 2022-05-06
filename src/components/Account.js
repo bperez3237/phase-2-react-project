@@ -8,10 +8,9 @@ function Account({username, feed }) {
         counter = counter + post.text.length
     })
 
-    console.log(userFeed)
     if (userFeed.length<1) {
         return (
-            <div>
+            <div className="container">
                 <h1>Account Owner:</h1>
                 <h2>{username}</h2>
                 <h2>Number of Posts: {0}</h2>
@@ -21,7 +20,7 @@ function Account({username, feed }) {
         )
     } else {
         return (
-            <div>
+            <div className="container">
                 <h1>Account Owner:</h1>
                 <h2>{username}</h2>
                 <h2>Number of Posts: {userFeed.length}</h2>

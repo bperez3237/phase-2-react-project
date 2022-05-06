@@ -3,12 +3,12 @@ import { NavLink} from "react-router-dom";
 
 function NavBar({logout}) {
     return (
-        <div className="container">
-            <div className="row">
-                <NavLink to='./home' className='col-2' >Home</NavLink>
-                <NavLink to='./account'className='col-2' >Account</NavLink>
-                <NavLink to='/userlist'className='col-2' >User List</NavLink>
-                <button onClick={logout} className='col-1 offset-md-5'>Logout</button>
+        <div className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="navbar-nav">
+                <button onClick={logout} className='nav-link' className='btn btn-primary'>Logout</button>
+                <NavLink to='./home' className='nav-link' >Home</NavLink>
+                <NavLink to='./account'className='nav-link' >Account</NavLink>
+                <NavLink to='/userlist'className='nav-link' >User List</NavLink>
             </div>
         </div>
     )

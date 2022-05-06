@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: aquamarine;
 }
 
 code {
@@ -16,5 +17,8 @@ code {
   flex-basis: 100%;
   height: 0;
 }
+
+
+
 
 
